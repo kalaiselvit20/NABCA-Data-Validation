@@ -1,6 +1,6 @@
 # NABCA Brand Summary — Validation Summary
 
-**Generated:** 2026-03-01 17:51  
+**Generated:** 2026-03-01 18:03  
 **Months processed:** 15  
 
 ## Month-by-Month Results

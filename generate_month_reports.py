@@ -202,23 +202,23 @@ def generate_month_report(result, output_dir):
         lines.append(f"*Status: {cnt_status}*")
     lines.append("")
 
-    # --- Sample Errors ---
+    # --- All Errors ---
     error_list = supa.get('error_list', []) if supa else []
     if error_list:
-        lines.append("## Sample Errors (first 10)")
+        lines.append(f"## All Errors ({len(error_list)} records)")
         lines.append("")
-        lines.append("| Type | Page | Brand | Vendor | Class | Field | CSV | Supa |")
-        lines.append("|------|------|-------|--------|-------|-------|-----|------|")
-        for err in error_list[:10]:
+        lines.append("| # | Type | Page | Brand | Vendor | Class | Field | CSV | Supa |")
+        lines.append("|--:|------|------|-------|--------|-------|-------|-----|------|")
+        for i, err in enumerate(error_list, 1):
             etype = err.get('Error_Type', err.get('error_type', ''))
             page = err.get('Page', err.get('page', ''))
-            brand = str(err.get('Brand', err.get('brand', '')))[:25]
-            vendor = str(err.get('Vendor', err.get('vendor', '')))[:18]
-            cls = str(err.get('Class', err.get('class', '')))[:25]
+            brand = str(err.get('Brand', err.get('brand', '')))
+            vendor = str(err.get('Vendor', err.get('vendor', '')))
+            cls = str(err.get('Class', err.get('class', '')))
             field = err.get('Field', err.get('field', ''))
             csv_val = err.get('CSV_Value', err.get('csv_val', ''))
             supa_val = err.get('Supa_Value', err.get('supa_val', ''))
-            lines.append(f"| {etype} | {page} | {brand} | {vendor} | {cls} | {field} | {csv_val} | {supa_val} |")
+            lines.append(f"| {i} | {etype} | {page} | {brand} | {vendor} | {cls} | {field} | {csv_val} | {supa_val} |")
         lines.append("")
 
     # Write file
