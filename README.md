@@ -92,15 +92,37 @@ AWS Textract JSON (S3 / local)
 | `validate_totals.py` | PDF TOTAL row vs CSV sum-per-class validation |
 | `pipeline.py` | End-to-end orchestration with resume support |
 | `report_generator.py` | Consolidated CSV / Excel / PDF report generation |
+| `generate_month_reports.py` | Per-month markdown reports + summary from pipeline results |
 
-## Key Results (September 2025)
+## Validation Reports (15 Months)
+
+Full validation results for all 15 months (Jul 2024 &ndash; Sep 2025) are in [`reports/`](reports/).
+
+- **[Summary Table](reports/summary.md)** &mdash; Cross-month comparison with Supabase record counts, error counts, and error rates
+- Per-month reports: [Jul 2024](reports/2024-07.md) | [Aug 2024](reports/2024-08.md) | [Sep 2024](reports/2024-09.md) | [Oct 2024](reports/2024-10.md) | [Nov 2024](reports/2024-11.md) | [Dec 2024](reports/2024-12.md) | [Jan 2025](reports/2025-01.md) | [Feb 2025](reports/2025-02.md) | [Mar 2025](reports/2025-03.md) | [Apr 2025](reports/2025-04.md) | [May 2025](reports/2025-05.md) | [Jun 2025](reports/2025-06.md) | [Jul 2025](reports/2025-07.md) | [Aug 2025](reports/2025-08.md) | [Sep 2025](reports/2025-09.md)
+
+### Aggregate Results
+
+| Metric | Value |
+|--------|------:|
+| Total records extracted | 339,399 |
+| Months processed | 15 |
+| Months PASS | 2 |
+| Months FAIL | 12 |
+| Total Supabase records validated | 249,519 |
+| Total errors | 3,729 |
+| Overall error rate | 1.49% |
+| Average key match rate | 99.5% |
+| Average exact match rate | 99.4% |
+
+### Key Results (September 2025 &mdash; Latest Month)
 
 | Metric | Value |
 |--------|-------|
 | Records extracted | 23,968 |
 | Classes | 65 |
 | Internal class TOTAL validation | 65/65 matched |
-| CSV vs Supabase key match rate | 99.9% |
+| CSV vs Supabase key match rate | 100.0% |
 | CSV vs Supabase exact value match | 99.4% |
-| Business logic failures | 9 (bottle sum mismatches) |
+| Total errors | 165 (0.69% error rate) |
 | Rows missing class | 0 |

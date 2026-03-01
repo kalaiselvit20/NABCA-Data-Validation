@@ -1,6 +1,10 @@
 Textract/
 output_raw/
-reports/
 *.json
 __pycache__/
 .env
+
+# Allow reports and pipeline results
+!reports/
+!reports/**
+!reports/pipeline_results.json
