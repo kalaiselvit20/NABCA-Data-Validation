@@ -1,0 +1,6 @@
+Textract/
+output_raw/
+reports/
+*.json
+__pycache__/
+.env
